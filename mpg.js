@@ -8,7 +8,7 @@ do {
         const mpg = parseFloat(miles/gallons);
 
         const html = `<p>${miles} miles on ${gallons} 
-                      gallons = ${mpg.toFixed(3)} MPG</p>`;
+                      gallons = ${mpg.toFixed(2)} MPG</p>`;
         document.write(html);
     } 
     else {
@@ -16,5 +16,8 @@ do {
     }
  
     again = prompt("Repeat entries? (y/n)", "y");
-}
+    }
+    while (again != "y" && again != "n")
+        alert("Invalid message")
+    
 while (again == "y");
