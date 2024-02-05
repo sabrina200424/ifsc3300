@@ -17,7 +17,7 @@ do {
  
     again = prompt("Repeat entries? (y/n)", "y");
     }
-    while (again != "y" && again != "n")
-        alert("Invalid message")
+    //while (again != "y" && again != "n")
+        //alert("Invalid message")
     
 while (again == "y");
