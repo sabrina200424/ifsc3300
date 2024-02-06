@@ -1,0 +1,94 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /*  background-color: #9fb1bc;
+   /* background-color: #cfe2ee;
+   /* background-color: #cfe2ee;
+   /* background-color: #cfe2ee;
+    background-image: urlbackground-color: #c7e582;
+    background-image:{ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%237aa11f' fill-opacity='0.43' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%236a8290' fill-opacity='0.46' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");*/
+
+background-color: #c7e582;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%237aa11f' fill-opacity='0.14'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+.container {
+    width: 95wv;
+    max-width: 1120px;
+    margin: 80px auto;
+  }
+
+  .title {
+    color: #0a8510;
+    display: flex;
+    justify-content: center;
+    width: 95wv;
+    padding-top: 40px;
+  }
+
+  .position {
+    display: flex;
+    justify-content: center;
+    color: #13ad20;
+    font-size: 22px;
+    padding-bottom: 20px;
+  }
+/*color blue = #6a8290 */
+
+  header.primary nav ul a {
+    display: flex;
+    justify-content: center;
+    color: #16752a;
+    text-decoration: none;
+  }
+
+  .paragraph {
+    display: flex;
+    justify-content: center;
+    color: #205b80;
+    font-size: 22px;
+  }
+
+  header.primary nav ul {
+    list-style-type: none;
+  }
+
+  .writing {
+    display: flex;
+    justify-content: center;
+    color: #1d5375;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 10px;
+    font-size: 16px;
+
+  }
+
+  .list {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .items {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .link {
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+  }
+
+  .link a {
+    text-decoration: none;
+    color: #1d5375;
+  }
