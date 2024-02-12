@@ -18,6 +18,10 @@ do {
     again = prompt("Repeat entries? (y/n)").toLowerCase();
 } while (again !== 'y' && again !== 'n');
 
+if (again !== 'y' && again !== 'n') {
+    alert("Invalid input. Please enter 'y' or 'n'.");
+}
+
 //while (again !== 'y' && again !== 'n') {
    // again = prompt("Invalid input. Please enter 'y' or 'n'").toLowerCase();
 //}
