@@ -15,12 +15,23 @@ do {
         alert("One or both entries are invalid");
     }
  
-    again = prompt("Repeat entries? (y/n)").toLowerCase();
-} while (again !== 'y' && again !== 'n');
+    do {
+        again = prompt("Repeat entries? (y/n)").toLowerCase();
+        
+        if (again !== 'y' && again !== 'n') {
+            alert("Invalid input. Please enter 'y' or 'n'");
+        }
+    } while (again !== 'y' && again !== 'n');
 
-if (again !== 'y' && again !== 'n') {
-    alert("Invalid input. Please enter 'y' or 'n'.");
-}
+} while (again !== 'n');
+
+
+
+
+
+//if (again !== 'y' && again !== 'n') {
+    //alert("Invalid input. Please enter 'y' or 'n'.");
+//}
 
 //while (again !== 'y' && again !== 'n') {
    // again = prompt("Invalid input. Please enter 'y' or 'n'").toLowerCase();
