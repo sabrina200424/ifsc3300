@@ -18,6 +18,7 @@ do {
     do {
         again = prompt("Repeat entries? (y/n)").toLowerCase();
         
+        // Check if the input is neither 'y' nor 'n'
         if (again !== 'y' && again !== 'n') {
             alert("Invalid input. Please enter 'y' or 'n'");
         }
