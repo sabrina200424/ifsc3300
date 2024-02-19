@@ -18,7 +18,7 @@ do {
 while(score != -1);
 
 if (scores.length > 0) {
-    // use a for-in loop to add each score to total, and display score
+    // make sure to add in for loop
     let total = 0;
     for (let i in scores) {
         total = total + scores[i];
@@ -35,17 +35,17 @@ function highestScore(numbers) {
         return "Please provide a non-empty array of numbers.";
     }
 
-    let highest = numbers[0]; // Assume the first number is the highest
+    let highest = numbers[0]; // First number is the highest number
 
     for (let i = 1; i < numbers.length; i++) {
         if (numbers[i] > highest) {
-            highest = numbers[i]; // Update highest if a higher number is found
+            highest = numbers[i]; // Update larger number
         }
-        const highestScore = findHighestNumber(scores);
-        document.write(`<p>Highest score is ${highestScore}</p>`);
     }
-
-    return highest;
+     return highest;
 }
-document.write(html);
-    
+ const highestNumber = highestScore(scores); 
+document.write(`<p>Highest score is ${highestNumber}</p>`);
+
+    //const part has to be outside of the function to get it working
+// set a different variable for different sides of the equation (example no. 47)
