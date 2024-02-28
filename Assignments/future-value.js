@@ -8,7 +8,10 @@ const calculateFV = (investment, interestRate, years) => {
     futureValue = futureValue + (futureValue * rate / 100);
 }
 return futureValue.toFixed(2) 
-//makes decimal part 2 place
+//$("#mpg").value = (miles / gallons).toFixed(2);
+
+//document.$("futureValue").value = (miles / gallons).toFixed(2)
+//makes decimal part 2 places
 
 }; 
 
@@ -21,16 +24,17 @@ return futureValue.toFixed(2)
 
 //---------------------------------------------------------------------------------
 
-document.addEventListener("DOMContentLoaded", () => {
-    const processEntries = () => {
+
+const processEntries = () => {
     
-        $("#join_list").addEventListener("click", evt => {
+        $("#calculate").addEventListener("click", evt => {
             // get values user entered in textboxes
-            const investment = parseFloat($("#investment_number").value);
-            const interestRate = parseFloat($("#interest_Rate").value);
-            const years = parseFloat($("#years_number").value);
-            
-            let errorMessage = "";
+            const investment = parseFloat($("#investment").value);
+            const interestRate = parseFloat($("#interestRate").value);
+            const years = parseFloat($("#years").value);
+            //const futureValue = parseFloat($("#futureValue").value);
+
+    let errorMessage = "";
 
     if (isNaN(investment) && investment <= 0 && investment > 100000) {
         errorMessage = 'Investment must be a number greater than zero and less than or equal to 100,000.';
@@ -41,7 +45,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isNaN(years) && years <= 0 && years > 50) {
     errorMessage = 'Years must be a number greater than zero and less than or equal to 50.';
     }
-    if (errorMessage === '') {
-        const futureValue = calculateFV(investment, interestRate, years);
-    }
-})}});
+
+    //if (errorMessage == '') {
+     //   const futureValue = calculateFV(investment, interestRate, years);
+      //  $("#futureValue").value = futureValue + (futureValue * rate / 100).toFixed(2);
+   // } else {
+        // Display error message
+        //alert(errorMessage);
+   // }
+   const futureValue = calculateFV(investment, interestRate, years);
+   $("#futureValue").value = futureValue + (futureValue * rate / 100).toFixed(2);
+   
+   //document.addEventListener("DOMContentLoaded", () => {
+  //  $("#calculate").addEventListener(
+  //      "click", processEntries);
+   // $("#investment").focus();
+
+})};
+
+document.addEventListener("DOMContentLoaded", () => {})
