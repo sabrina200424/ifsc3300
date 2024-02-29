@@ -1,5 +1,9 @@
 "use strict";
+const $ = function(selector) {
+    return document.querySelector(selector);
+};
 
+/*
 const calculateFV = (investment, interestRate, years) => {
 
     const rate = interestRate / 100;
@@ -7,14 +11,15 @@ const calculateFV = (investment, interestRate, years) => {
     for (let i = 1; i <= years; i++ ) {
     futureValue = futureValue + (futureValue * rate / 100);
 }
-return futureValue.toFixed(2) 
+return futureValue.toFixed(2);
+
 //$("#mpg").value = (miles / gallons).toFixed(2);
 
 //document.$("futureValue").value = (miles / gallons).toFixed(2)
 //makes decimal part 2 places
 
 }; 
-
+*/
 
 // display results
 //document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
@@ -26,7 +31,7 @@ return futureValue.toFixed(2)
 
 
 const processEntries = () => {
-    
+    /*
         $("#calculate").addEventListener("click", evt => {
             // get values user entered in textboxes
             const investment = parseFloat($("#investment").value);
@@ -54,13 +59,20 @@ const processEntries = () => {
         //alert(errorMessage);
    // }
    const futureValue = calculateFV(investment, interestRate, years);
-   $("#futureValue").value = futureValue + (futureValue * rate / 100).toFixed(2);
+   //$("#futureValue").value = futureValue + (futureValue * rate / 100).toFixed(2);
+  */ $("#futureValue").value = "hello";
    
-   //document.addEventListener("DOMContentLoaded", () => {
-  //  $("#calculate").addEventListener(
-  //      "click", processEntries);
+  
    // $("#investment").focus();
 
-})};
+};
 
-document.addEventListener("DOMContentLoaded", () => {})
+ document.addEventListener("DOMContentLoaded", () => {
+    $("#futureValue").value = "hello";
+    alert("testing");
+    document.write("working");
+    $("#calculate").addEventListener("click", processEntries);
+ });
+
+//document.addEventListener("DOMContentLoaded", () => {})
+//document.addEventListener("DOMContentLoaded", processEntries);
