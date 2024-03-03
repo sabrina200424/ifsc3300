@@ -1,8 +1,7 @@
 "use strict";
 
-    const $ = function(selector) {
-        return document.querySelector(selector);
-    };
+const $ = selector => document.querySelector(selector);
+
 
     const calculateFV = (investment, interestRate, years) => {
         const rate = interestRate / 100;
@@ -30,7 +29,7 @@
             errorMessage = 'Years must be a number greater than zero and less than or equal to 50.';
         }
 
-        if (errorMessage === '') {
+        if (errorMessage == '') {
             const futureValue = calculateFV(investment, interestRate, years);
             $("#futureValue").value = futureValue;
         } else {

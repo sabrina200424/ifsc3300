@@ -2,19 +2,16 @@
 const $ = selector => document.querySelector(selector);
 
 
-    
 
+    const calculateFV = (investment, interestRate, years) => {
 
-
-const calculateFV = (investment, interestRate, years) => {
-
-    const rate = interestRate / 100;
-    let futureValue = investment;
-    for (let i = 1; i <= years; i++ ) {
-        futureValue = futureValue + (futureValue * rate / 100);
-}
-    return futureValue.toFixed(2);
-}; 
+        const rate = interestRate / 100;
+            let futureValue = investment;
+        for (let i = 1; i <= years; i++ ) {
+        futureValue = futureValue + (futureValue * rate);
+    }
+        return futureValue.toFixed(2);
+    }; 
 
 
 
@@ -43,17 +40,17 @@ const processEntries = () => {
    
     if (errorMessage == '') {
        const futureValue = calculateFV(investment, interestRate, years);
-        $("#futureValue").value = futureValue + (futureValue * rate / 100).toFixed(2);
+        //$("#futureValue").value = futureValue + (futureValue * rate / 100).toFixed(2);
+        // remove the calculation part because it's done once before 
+        $("#futureValue").value = futureValue;
     } else {
         //Display error message
         alert(errorMessage);
-    };
-
-   
+    }
 };
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    $("#futureValue").value = futureValue + (futureValue * rate / 100).toFixed(2);
+document.addEventListener("DOMContentLoaded", function() {
+    //$("#futureValue").value = futureValue + (futureValue * rate / 100).toFixed(2);
     $("#calculate").addEventListener("click", processEntries);
 });
