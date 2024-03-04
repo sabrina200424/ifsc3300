@@ -19,7 +19,7 @@ const $ = selector => document.querySelector(selector);
 const processEntries = () => {
     
    // $("#calculate").addEventListener("click", evt => {
-        // get values user entered in textboxes
+        // user's prompt values
         const investment = parseFloat($("#investment").value);
         const interestRate = parseFloat($("#interestRate").value);
         const years = parseFloat($("#years").value);
