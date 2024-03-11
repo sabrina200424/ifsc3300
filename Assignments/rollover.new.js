@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         img.src = link.href; // This causes the images to be pre-loaded
     });
 
-    // Attach mouseover and mouseout events for image1
+    
     image1.addEventListener("mouseover", () => {
         image1.src = "Images/release.jpg";
     });
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         image1.src = "Images/hero.jpg";
     });
 
-    // Attach mouseover and mouseout events for image2
+    //Adding in mouseover events for each images 
     image2.addEventListener("mouseover", () => {
         image2.src = "Images/deer.jpg";
     });
