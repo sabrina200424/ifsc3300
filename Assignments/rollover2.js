@@ -12,12 +12,7 @@ $(document).ready(() => {
 
         $(img).mouseover( () => img.src = newURL );
         $(img).mouseout( () => img.src = oldURL);
-        
-        // set up event handlers for hovering over an image
-        $(img).hover(   // use jQuery syntax to access hover() method
-            () => img.src = newURL,  // hover over
-            () => img.src = oldURL   // hover out
-        ); 
+      
     });
     
 });
