@@ -10,9 +10,9 @@ $(document).ready(() => {
         const rolloverImage = new Image();
         rolloverImage.src = newURL;
 
-        $(img).mouseover( () => img.src = newURL );
-        $(img).mouseout( () => img.src = oldURL);
-      
+        $(img).mouseover( () => img.src = newURL ); //change out the hover attribute to mouseover
+        $(img).mouseout( () => img.src = oldURL); //change out the hover attribute to mouseout
+      //removed out the commented out portion
     });
     
 });
