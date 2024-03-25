@@ -3,7 +3,7 @@
 $(document).ready(function() {
     $("#categories h2").click( evt => {
         const h2 = evt.currentTarget;
-
+//targets the h2 element
         $(h2).toggleClass("minus");
 
         if ($(h2).attr("class") !== "minus") {
@@ -14,22 +14,23 @@ $(document).ready(function() {
         }
 
         $("#image").attr("src", "");
-    }); // end click
+    }); 
+// makes the following line into an empty string
 
     $("#web_images a, #language_images a, #database_images a").each( (index, img) => {
-        // get old and new urls
+ //tagets all of the specific id in the html document       
         var imageURL = $(img).attr("href");
 
         // putting in the function to load out the different images		
         var bookImage = new Image();
         bookImage.src = imageURL;
 
-        // set up event handlers			
+        	
         $(img).click( evt => {
             $("#image").attr("src", imageURL);
-
-        // cancel the default action of each link
+//changes out image url once clicked
+       
         evt.preventDefault();
-        }); // end click 
-    }); // end each
-}); // end ready
+        }); 
+    }); 
+}); 
