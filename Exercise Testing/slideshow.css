@@ -16,10 +16,10 @@ h1 {
 h2 {
 	font-size: 120%;
 	padding: .25em 0 .25em 25px;
-	background: url(images/plus.png) no-repeat left center;
+	background: url(Images/plus.png) no-repeat left center;
 }
 h2.minus {
-	background: url(images/minus.png) no-repeat left center;
+	background: url(Images/minus.png) no-repeat left center;
 }
 a {
     color: black;
