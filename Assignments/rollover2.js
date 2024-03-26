@@ -12,7 +12,7 @@ $(document).ready(() => {
 
         $(img).mouseover( () => img.src = newURL ); //change out the hover attribute to mouseover
         $(img).mouseout( () => img.src = oldURL); //change out the hover attribute to mouseout
-      //removed out the commented out portion
+      //removed out the commented out portion as the textbook asked 
     });
     
 });
