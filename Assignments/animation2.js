@@ -1,26 +1,24 @@
-$(document).ready(() => {
-    // runs when an h2 heading is clicked
-    $("#faqs h2").click(evt => {
-        const h2 = evt.currentTarget;
+"use strict";
+$(document).ready( () => {
+    
+    $("#faqs h1").animate( { fontSize: "650%", opacity: 1, left: "+=375" }, 1000 )  
+		         .animate( { fontSize: "175%", left: 0 }, 1000 );
+		    
+	// runs when the top-level heading is clicked
+	$("#faqs h1").click( () => {
+		$("#faqs h1").animate( { fontSize: "650%", opacity: 1, left: "+=375" }, 2000 )  
+			         .animate( { fontSize: "175%", left: 0 }, 1000 );
+	}); // end click
 
-        $(h2).toggleClass("minus");
-
-        if ($(h2).attr("class") != "minus") {
-            $(h2).next().fadeOut(500);
-        } else {
-            $(h2).next().fadeIn(500);
+    $("#faqs h2").click( evt => {
+        const target = evt.currentTarget;
+        $(target).toggleClass("minus");
+        if ($(target).attr("class") == "minus") {
+            $(target).next().slideDown(1000, "easeOutBounce");
         }
-
-        evt.preventDefault();
-    }); // end click
-
-    // runs when the page is ready
-    $("#faqs h1").animate({ fontSize: "650%", opacity: 1, left: 0 }, 1000, 'easeInOutCubic')
-        .animate({ fontSize: "175%", left: 0 }, 1000, 'easeInOutCubic');
-
-    // runs when the top-level heading is clicked
-    $("#faqs h1").click(() => {
-        $("#faqs h1").animate({ fontSize: "650%", opacity: 1, left: 0 }, 2000, 'easeInOutCubic')
-            .animate({ fontSize: "175%", left: 0 }, 1000, 'easeInOutCubic');
-    }); // end click
-}); // end ready
+        else {
+            $(target).next().slideUp(1000, "easeInBounce");
+        }
+    });
+    
+});
