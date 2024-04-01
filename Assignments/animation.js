@@ -10,6 +10,7 @@ $(document).ready( () => {
 		   	$(h2).next().slideUp(1000, "easeInBounce");
 	   	}
 		//slide no. 32 from chapter 9 content 
+		//put under target function
 	   	else {
 	        $(h2).next().slideDown(1000, "easeOutBounce");
 		   }
