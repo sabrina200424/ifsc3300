@@ -2,7 +2,7 @@ const getRandomNumber = max => {
     let random = null;
  
     if (!isNaN(max)) {
-        // value >= 1 and < 10
+        // value >= 0.0 and < 1.0
         random = Math.random(); 
  
         // value is an integer between 0 and max - 1
