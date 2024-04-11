@@ -81,6 +81,7 @@ $(document).ready( () => {
 			$("#zip_code").next().text("");
 		}
         $("#zip_code").val(zipCode);
+        //look at slide no. 54 from ch 12
         			
         // validate the check boxes	
         let checkedOptions = [];
@@ -92,7 +93,8 @@ $(document).ready( () => {
             $("#net").next().text("");
         }
 						
-		// prevent the default action of submitting the form if any entries are invalid 
+		// doesn't let form sumbit if valid 
+        // look at slides 59 from ch 12
 		if (isValid == false) {
 			evt.preventDefault();
 		}
@@ -100,12 +102,12 @@ $(document).ready( () => {
 
     // handle click on Reset Form button
     $("#reset").click( () => {
-        // clear text boxes
+      
         $("#email_1").val("");
         $("#email_2").val("");
         $("#first_name").val("");
 
-        // reset span elements
+        
         $("#email_1").next().text("*");
         $("#email_2").next().text("*");
         $("#first_name").next().text("*");
