@@ -93,7 +93,7 @@ $(document).ready( () => {
             $("#net").next().text("");
         }
 						
-		// doesn't let form sumbit if valid 
+		// doesn't let form sumbit if invalid information is present
         // look at slides 59 from ch 12
 		if (isValid == false) {
 			evt.preventDefault();
