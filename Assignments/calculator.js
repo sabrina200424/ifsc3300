@@ -19,9 +19,34 @@ const calculateFutureValue = (investment, rate, years) => {
             i = years;
         }
     }
-    // alert ("The maximum value for a JavaScript number is \n" + Number.MAX_VALUE);
     return futureValue.toFixed(2);
 };
+
+const getDate = futureValue => {
+    const currentDate = new Date();
+
+    // get the date parts 
+    let month = currentDate.getMonth() + 1;
+    // + 1 January = 0
+    if (month < 10) {
+        month = "0" + month;
+    }
+    let day = currentDate.getDate();
+    if (day < 10) {
+        day = "0" + day;
+    }
+    const year = currentDate.getFullYear();
+    
+    // get the time parts
+    const hours = currentDate.getHours();
+    let minutes = currentDate.getMinutes();
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    const dateString = `Today is ${month}/${day}/${year} at ${hours}:${minutes}.`;	
+    return dateString;    
+}
+// book ch 12 pg 381
 
 const formatFutureValue = futureValue => {
     const dotLocation = futureValue.indexOf(".");
@@ -49,34 +74,12 @@ const formatFutureValue = futureValue => {
 
 // beautification line of code to ensure that the code puts commas, dots in the right place
 
-const getDate = futureValue => {
-    const currentDate = new Date();
-
-    // get the date parts 
-    let month = currentDate.getMonth() + 1;
-    if (month < 10) {
-        month = "0" + month;
-    }
-    let day = currentDate.getDate();
-    if (day < 10) {
-        day = "0" + day;
-    }
-    const year = currentDate.getFullYear();
-    
-    // get the time parts
-    const hours = currentDate.getHours();
-    let minutes = currentDate.getMinutes();
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    const dateString = `Today is ${month}/${day}/${year} at ${hours}:${minutes}.`;	
-    return dateString;    
-}
 
 $(document).ready( () => {
     $("#calculate").click( () => {
 
         const investment = getRandomNumber(50000);
+        //ch 12 slides 19 for getting random number 
 		$("#investment").val(investment);
 		const rate = getRandomNumber(15);
 		$("#rate").val(rate);
@@ -107,11 +110,11 @@ $(document).ready( () => {
 
         if (isValid) {
             const futureValue = calculateFutureValue(investment, rate, years);
-            // $("#future_value").val(formatFutureValue(futureValue));
             const usCurrency = new Intl.NumberFormat("en-us", {style:"currency", currency:"USD"});
             $("#future_value").val(usCurrency.format(futureValue));
 
         }
+        //ch 12 slides no. 60
     });
     $("#date").text(getDate());
     $("#investment").focus();
