@@ -31,17 +31,12 @@ $( document ).ready( () => {
         const phone = $("#phone").val();
         const zip = $("#zip").val();
         const dob = $("#dob").val();
-        const card = $("#card").val();
-        const ccDate = $("#cc_date").val();
 
         // regular expressions for validity testing
         const emailPattern = /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/;
         const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
         const zipPattern = /^\d{5}(-\d{4})?$/;
         const datePattern = /^[01]?\d\/[0-3]\d\/\d{4}$/;
-        const cardPattern = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
-        const ccDatePattern = /^[01]?\d\/\d{4}$/;
-        //pg 421 for credit card format
         
         // check user entries for validity
         let isValid = true;
@@ -57,10 +52,12 @@ $( document ).ready( () => {
             isValid = false;
             $("#zip").next().text("Please enter a valid zip code.");
         }
-        if ( dob === "" || !isDate(dob, datePattern, "full") ) {
+        if ( dob === "" || !isDate(dob, datePattern) ) {
             isValid = false;
             $("#dob").next().text("Please enter a valid date in MM/DD/YYYY format.");
         }
+// chapter 13 slides no.57 and 58
+
         if ( card === "" || !cardPattern.test(card)) {
             isValid = false;
             $("#card").next().text("Please enter a credit card in NNNN-NNNN-NNNN-NNNN format.");
@@ -69,8 +66,7 @@ $( document ).ready( () => {
             isValid = false;
             $("#cc_date").next().text("Please enter a valid date in MM/YYYY format.");
         }
-        // chapter 13 slides no.57 and 58
-
+        
         if ( isValid ) { 
             // code that saves profile info goes here
         }
