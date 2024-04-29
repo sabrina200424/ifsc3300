@@ -1,56 +1,34 @@
 "use strict";
 
-$(document).ready( () => {
+class Event {
+    constructor(name, dateString) {
+        this.name = name;
+        this.dateString = dateString;
+        this.date = new Date(dateString);
+    }
 
-    $("#countdown").click( function() {
-        let name = $("#event").val();
-        let dateString = $("#date").val();    
-
-        //make sure event name and date are entered
-        if (name.length === 0 || dateString.length === 0) {
-            $("#message").text("Please enter both a name and a date.");
-            return;
-        }  
-
-        //make sure due date string has slashes and a 4-digit year
-        if (dateString.indexOf("/") === -1) { 
-            $("#message").text("Please enter the date in MM/DD/YYYY format.");
-            return;
-        } 
-        const year = dateString.substring(dateString.length - 4); 
-        if (isNaN(year)) {
-            $("#message").text("Please enter the date in MM/DD/YYYY format.");
-            return;
-        }     
-        //convert due date string to Date object and make sure date is valid
-        let date = new Date(dateString);
-        if (date.toString() === "Invalid Date") {
-            $("#message").text("Please enter the date in MM/DD/YYYY format.");
-            return;
-        }
-
-        //calculate days
+    get days() {
         const today = new Date();
         const oneDayMS = 24*60*60*1000; // hours * minutes * seconds * milliseconds    
-        let days = (date.getTime() - today.getTime()) / oneDayMS;
+        let days = ( this.date.getTime() - today.getTime() ) / oneDayMS;
         days = Math.ceil(days);
+        return days;
+    }
 
-        //create and display message 
-        if (days === 0) {
-            $("#message").text( "Hooray! Today is ".concat(name, 
-                "!\n(", date.toDateString(), ")") );
+    getCountdownMessage() {
+        // create and display countdown message 
+        if (this.days === 0) {  // today
+            return "Hooray! Today is ".concat(this.name, 
+                "!\n(", this.date.toDateString(), ")");
         }
-        if (days < 0) {
-            //make sure event name is capitalized
-            name = name.substring(0,1).toUpperCase() + name.substring(1); 
-            $("#message").text(name.concat(" happened ", Math.abs(days), 
-                " day(s) ago. \n (", date.toDateString(), ")"));
+        else if (this.days < 0) { // past
+            let name = this.name.substring(0,1).toUpperCase() + this.name.substring(1); 
+            return name.concat(" happened ", Math.abs(this.days), 
+                " day(s) ago. \n (", this.date.toDateString(), ")"); 
         }
-        if (days > 0) {
-            $("#message").text( days.toString().concat(" day(s) until ", 
-                name, "!\n(", date.toDateString(), ")") );
+        else {  // future
+            return this.days.toString().concat(" day(s) until ", 
+                this.name, "!\n(", this.date.toDateString(), ")");
         }
-    });
-    
-    $("#event").focus();
-});
+    }    
+}
