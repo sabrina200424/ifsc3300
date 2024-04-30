@@ -19,16 +19,16 @@ class Event {
 
     getCountdownMessage() {
         
-        if (this.days === 0) {  // today
+        if (this.days === 0) {  //timing for today
             return "Hooray! Today is ".concat(this.name, 
                 "!\n(", this.date.toDateString(), ")");
         }
-        else if (this.days < 0) { // past
+        else if (this.days < 0) { // timing for the past events
             let name = this.name.substring(0,1).toUpperCase() + this.name.substring(1); 
             return name.concat(" happened ", Math.abs(this.days), 
                 " day(s) ago. \n (", this.date.toDateString(), ")"); 
         }
-        else {  // future
+        else {  // timing for future events
             return this.days.toString().concat(" day(s) until ", 
                 this.name, "!\n(", this.date.toDateString(), ")");
         }
