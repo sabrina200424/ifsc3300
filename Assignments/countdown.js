@@ -15,8 +15,10 @@ class Event {
         return days;
     }
 
+    // -4 and other number parts converted to val 
+
     getCountdownMessage() {
-        // create and display countdown message 
+        
         if (this.days === 0) {  // today
             return "Hooray! Today is ".concat(this.name, 
                 "!\n(", this.date.toDateString(), ")");

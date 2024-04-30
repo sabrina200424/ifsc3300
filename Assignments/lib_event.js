@@ -1,38 +1,31 @@
 "use strict";
 
-class Event {
-    constructor(name, dateString) {
-        this.name = name;
-        this.dateString = dateString;
-        this.date = new Date(dateString);
-    }
+$(document).ready( () => {
 
-    //more about defining an object ch 16 slide no. 25
+    $("#countdown").click( () => {
+        const event = new Event( $("#event").val(), $("#date").val() );
 
-    get days() {
-        const today = new Date();
-        const oneDayMS = 24*60*60*1000; // hours * minutes * seconds * milliseconds    
-        let days = ( this.date.getTime() - today.getTime() ) / oneDayMS;
-        days = Math.ceil(days);
-        return days;
-    }
-
-    getCountdownMessage() {
-        // create and display countdown message 
-        if (this.days === 0) {  // today
-            return "Hooray! Today is ".concat(this.name, 
-                "!\n(", this.date.toDateString(), ")");
+       
+        if (validation.isEmpty(event.name) || 
+            validation.isEmpty(event.dateString)) {
+            $("#message").text("Please enter both a name and a date.");
+            return;
         }
-        else if (this.days < 0) { // past
-            let name = this.name.substring(0,1).toUpperCase() + this.name.substring(1); 
-            return name.concat(" happened ", Math.abs(this.days), 
-                " day(s) ago. \n (", this.date.toDateString(), ")"); 
-        }
-        else {  // future
-            return this.days.toString().concat(" day(s) until ", 
-                this.name, "!\n(", this.date.toDateString(), ")");
-        }
-    }    
-}
 
-//line of code follows the overall current date 
+        //is empty has no slashes, etc. 
+       
+        if (validation.hasNoSlashes(event.dateString) ||
+            validation.isInvalidYear(event.dateString) ||
+            validation.isInvalidDate(event.date))
+        {
+            $("#message").text("Please enter the date in MM/DD/YYYY format.");
+            return;
+            //display error message
+        }
+
+      
+        $("#message").text(event.getCountdownMessage());
+    });
+    
+    $("#event").focus();
+});
